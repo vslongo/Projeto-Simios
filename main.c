@@ -46,7 +46,7 @@ int main () {
 }
 
 void linhaDetectada(char** mat, int i, int j, size_t lin, size_t col) {
-  printf("Macaco na linha %d!\n", (i+1));
+  printf("Simio detectado na linha %d!\n", (i+1));
   for (int k = 0; k < lin; k++) {
     for (int l = 0; l < col; l++) {
       if (k == i && ((l == j) || (l == j+1) || (l == j+2) || (l == j + 3))) {
@@ -60,7 +60,7 @@ void linhaDetectada(char** mat, int i, int j, size_t lin, size_t col) {
 }
 
 void colunaDetectada(char** mat, int i, int j, size_t lin, size_t col) {
-  printf("Macaco na coluna %d!\n", (i+1));
+  printf("Simio detectado na coluna %d!\n", (i+1));
   for (int k = 0; k < lin; k++) {
     for (int l = 0; l < col; l++) {
       if (l == j && ((k == i) || (k == i+1) || (k == i+2) || (k == i + 3))) {
@@ -74,12 +74,11 @@ void colunaDetectada(char** mat, int i, int j, size_t lin, size_t col) {
 }
 
 void diagonalPrincipalDetectada(char** mat, int i, int j, size_t lin, size_t col) {
-  printf("\n\nMacaco na diagonal principal, comecando na linha %d e na coluna %d\n\n", (i+1), (j+1));
+  printf("Simio detectado na diagonal principal, comecando na linha %d e na coluna %d\n", (i+1), (j+1));
   for (int k = 0; k < lin; k++) {
     for (int l = 0; l < col; l++) {
-      if (((k == i) && (l == j) && (l == k)) || ((k == i+1) && (l == j+1) && 
-      (l == k)) || ((k == i+2) && (l == j+2) && (l == k)) || (k == i+3) && 
-      (l == j+3) && (l == k)) {
+      if (((k == i) && (l == j)) || ((k == i+1) && (l == j+1)) || ((k == i+2) && (l == j+2)) || (k == i+3) && 
+      (l == j+3)) {
         printf("\x1B[31m" "%-3c " "\x1B[0m",mat[k][l]);
       } else {
         printf("%-3c ", mat[k][l]);
@@ -90,7 +89,7 @@ void diagonalPrincipalDetectada(char** mat, int i, int j, size_t lin, size_t col
 }
 
 void diagonalSecundariaDetectada(char** mat, int i, int j, size_t lin, size_t col) {
-  printf("Macaco na diagonal secundaria, comecando na linha  %d e na coluna %d\n", (i+1), (j+4));
+  printf("Simio detectado na diagonal secundaria, comecando na linha  %d e na coluna %d\n", (i+1), (j+4));
   for (int k = 0; k < lin; k++) {
     for (int l = 0; l < col; l++) {
       if (((k == i) && (l == j+3)) || ((k == i+1) && (l == j+2)) ||
