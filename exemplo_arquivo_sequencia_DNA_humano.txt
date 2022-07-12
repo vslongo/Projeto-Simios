@@ -1,7 +1,0 @@
-6 6
-A T G C G A
-C A G T G C
-T T A T T T
-A G A C G G
-G C G T C A
-T C A C T G
